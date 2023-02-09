@@ -1,6 +1,6 @@
 def quicksort(word):
     if not word:
-        return []
+        return word
     return (
         quicksort([char for char in word[1:] if char < word[0]])
         + [word[0]] +
@@ -9,6 +9,7 @@ def quicksort(word):
 
 
 def is_anagram(first_string, second_string):
+    """Retornará verdadeiro caso as palavras sejam anagramas"""
     first = quicksort(first_string.lower())
     second = quicksort(second_string.lower())
 
