@@ -1,12 +1,20 @@
-def quicksort(list):
-    if not list:
-        return []
+def quicksort(word):
+    if not word:
+        return word
     return (
-        quicksort([x for x in list[1:] if x < list[0]])
-            + [list[0]] +
-        quicksort([x for x in list[1:] if x >= list[0]])
+        quicksort([char for char in word[1:] if char < word[0]])
+        + [word[0]] +
+        quicksort([char for char in word[1:] if char >= word[0]])
     )
 
 
 def is_anagram(first_string, second_string):
-    """Meu código seŕa feito aqui"""
+    first_string_sorted = quicksort(first_string.lower())
+    first_string_sorted = quicksort(second_string.lower())
+
+    if not first_string or not second_string:
+        return ("".join(first_string_sorted), "".join(first_string_sorted), False)
+    if first_string_sorted != first_string_sorted:
+        return ("".join(first_string_sorted), "".join(first_string_sorted), False)
+    else:
+        return ("".join(first_string_sorted), "".join(first_string_sorted), True)
