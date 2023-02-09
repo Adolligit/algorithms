@@ -1,4 +1,5 @@
 def find_duplicate(nums):
+    """Retorna o número que esta duplicado...se acredita?"""
     sorted_numbers = sorted(nums)
 
     if len(sorted_numbers) < 2:
