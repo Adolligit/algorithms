@@ -1,6 +1,6 @@
 def quicksort(word):
     if not word:
-        return word
+        return []
     return (
         quicksort([char for char in word[1:] if char < word[0]])
         + [word[0]] +
@@ -10,11 +10,11 @@ def quicksort(word):
 
 def is_anagram(first_string, second_string):
     first_string_sorted = quicksort(first_string.lower())
-    first_string_sorted = quicksort(second_string.lower())
+    second_string_sorted = quicksort(second_string.lower())
 
     if not first_string or not second_string:
-        return ("".join(first_string_sorted), "".join(first_string_sorted), False)
-    if first_string_sorted != first_string_sorted:
-        return ("".join(first_string_sorted), "".join(first_string_sorted), False)
+        return ("".join(first_string_sorted), "".join(second_string_sorted), False)
+    if first_string_sorted != second_string_sorted:
+        return ("".join(first_string_sorted), "".join(second_string_sorted), False)
     else:
-        return ("".join(first_string_sorted), "".join(first_string_sorted), True)
+        return ("".join(first_string_sorted), "".join(second_string_sorted), True)
