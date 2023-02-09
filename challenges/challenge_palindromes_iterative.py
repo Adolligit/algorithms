@@ -4,7 +4,5 @@ def is_palindrome_iterative(word):
 
     if word != word[::-1]:
         return False
-    
-    return True    
-        
-is_palindrome_iterative('ana')
+
+    return True
